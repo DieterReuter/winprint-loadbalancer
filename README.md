@@ -18,6 +18,7 @@
 - http://blogs.technet.com/b/jhoward/archive/2010/01/25/announcing-nvspbind.aspx
 - https://social.technet.microsoft.com/Forums/de-DE/0cad1ba1-8c80-49fe-ad9f-2fff858ced03/setting-ip-addresses-with-win32networkadapterconfiguration?forum=winserverpowershell
 - https://4sysops.com/archives/disable-strict-name-checking-with-powershell/
+- http://www.tech-no.org/?p=1122
 
 
 
