@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.define :"spool-ps1" do |box1|
     box1.vm.box = "windows_2008_r2"
     box1.vm.hostname = "spool-ps1"
-    //box1.vm.network :private_network, ip: "192.168.33.101", gateway: "192.168.33.1"
+    #box1.vm.network :private_network, ip: "192.168.33.101", gateway: "192.168.33.1"
 
     box1.vm.provider :virtualbox do |vb, override|
       vb.gui = true
@@ -31,7 +31,7 @@ Vagrant.configure(2) do |config|
   config.vm.define :"spool-ps2" do |box2|
     box2.vm.box = "windows_2008_r2"
     box2.vm.hostname = "spool-ps2"
-    //box2.vm.network :private_network, ip: "192.168.33.102", gateway: "192.168.33.1"
+    #box2.vm.network :private_network, ip: "192.168.33.102", gateway: "192.168.33.1"
 
     box2.vm.provider :virtualbox do |vb, override|
       vb.gui = true
@@ -52,7 +52,7 @@ Vagrant.configure(2) do |config|
   config.vm.define :"spool-win7" do |box3|
     box3.vm.box = "windows_7"
     box3.vm.hostname = "spool-win7"
-    //box3.vm.network :private_network, ip: "192.168.33.107", gateway: "192.168.33.1"
+    #box3.vm.network :private_network, ip: "192.168.33.107", gateway: "192.168.33.1"
 
     box3.vm.provider :virtualbox do |vb, override|
       vb.gui = true
