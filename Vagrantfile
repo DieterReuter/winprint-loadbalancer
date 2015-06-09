@@ -6,6 +6,7 @@ ENV["VAGRANT_DEFAULT_PROVIDER"] = "virtualbox"
 
 Vagrant.configure(2) do |config|
   config.vm.box = "windows_2008_r2"
+  config.vm.network :forwarded_port, :host => 8000, :guest => 8000
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
