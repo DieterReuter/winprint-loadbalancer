@@ -17,6 +17,7 @@
 
 - http://blogs.technet.com/b/jhoward/archive/2010/01/25/announcing-nvspbind.aspx
 - https://social.technet.microsoft.com/Forums/de-DE/0cad1ba1-8c80-49fe-ad9f-2fff858ced03/setting-ip-addresses-with-win32networkadapterconfiguration?forum=winserverpowershell
+- https://4sysops.com/archives/disable-strict-name-checking-with-powershell/
 
 
 
@@ -105,4 +106,10 @@ devcon.exe
 ---
 wget https://gallery.technet.microsoft.com/Hyper-V-Network-VSP-Bind-cf937850/file/117120/1/Microsoft_Nvspbind_package.EXE
 
+
+List all available network adapters:
+```
+get-wmiobject win32_networkadapter -filter "netconnectionstatus = 2" 
+
+```
 

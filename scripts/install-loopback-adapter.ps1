@@ -6,13 +6,20 @@ $VIP_NETMASK   = "255.255.255.0"
 #---
 
 # rename the existing NIC to "net"
+write-host "Set name of ethernet network adapter to 'net'"
 $id = (Get-WmiObject Win32_NetworkAdapter -Filter "Name='Intel(R) PRO/1000 MT Desktop Adapter'").NetConnectionID
 netsh int set int name = $id newname = "net"
 
-# install loopback adapter
-\vagrant\wintools\devcon.exe -r install $env:windir\Inf\Netloop.inf *MSLOOP | Out-Null
+# install loopback adapter, if it doesn't already exists
+if ( !(Get-WmiObject Win32_NetworkAdapter -Filter "Description='Microsoft Loopback Adapter'").NetConnectionID ) {
+  write-host "Create new loopback adapter"
+  \vagrant\wintools\devcon.exe -r install $env:windir\Inf\Netloop.inf *MSLOOP | Out-Null
+} else {
+  write-host "Loopback adapter already exists"
+}
 
 # rename the loopback NIC to "loopback"
+write-host "Set name of loopback adapter to 'loopback'"
 $id = (Get-WmiObject Win32_NetworkAdapter -Filter "Description='Microsoft Loopback Adapter'").NetConnectionID
 netsh int set int name = $id newname = "loopback"
   
