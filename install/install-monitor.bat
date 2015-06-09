@@ -8,9 +8,6 @@ set SERVICE_NAME=SEAL Monitor PrintSpooler
 set SERVICE_DESCRIPTION=SEAL Monitor PrintSpooler
 set SERVICE_LOGFILE="C:\opt\monitor-spooler.log"
 set SERVICE_PARAMETERS=""
-set SERVICE_USERNAME=".\vagrant"
-set SERVICE_PASSWORD="vagrant"
-
 
 :rem ---DO NOT EDIT BEYOND---
 
@@ -36,7 +33,6 @@ echo [NSSM] Trying to remove possibly pre-existing service "%SERVICE_NAME%"...
 "%NSSM%" set "%SERVICE_NAME%" AppStdout "%SERVICE_LOGFILE%"
 "%NSSM%" set "%SERVICE_NAME%" AppStderr "%SERVICE_LOGFILE%"
 "%NSSM%" set "%SERVICE_NAME%" Description "%SERVICE_DESCRIPTION%"
-"%NSSM%" set "%SERVICE_NAME%" ObjectName "%SERVICE_USERNAME%" "%SERVICE_PASSWORD%"
 
 if not errorlevel 1 (
   :rem echo.
