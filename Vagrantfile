@@ -17,8 +17,7 @@ Vagrant.configure(2) do |config|
     vb.cpus = 2
   end
 
-  #config.vm.provision "shell", path: "scripts/install-chocolatey.ps1", privileged: false
   config.vm.provision "shell", path: "scripts/install-role-printserver.ps1", privileged: false
   config.vm.provision "shell", path: "install/install-monitor.bat", privileged: false
-  #config.vm.provision "shell", path: "scripts/install-loopback-adapter.ps1", privileged: false
+  config.vm.provision "shell", path: "scripts/install-loopback-adapter.ps1", privileged: false
 end
