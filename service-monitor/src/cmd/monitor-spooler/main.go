@@ -1,6 +1,7 @@
-package main
-
+// +build windows
 // compile= GOOS=windows GOARCH=amd64 go build
+
+package main
 
 import (
 	"fmt"
