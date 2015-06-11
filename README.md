@@ -114,3 +114,27 @@ get-wmiobject win32_networkadapter -filter "netconnectionstatus = 2"
 
 ```
 
+VMware Fusion Network settings
+http://sanbarrow.com/vmx/vmx-network-advanced.html
+ls -al /Library/Preferences/VMware\ Fusion/
+
+vboxnet6: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 0a:00:27:00:00:06
+	inet 10.10.51.1 netmask 0xffffff00 broadcast 10.10.51.255
+
+File=~/Documents/Virtual Machines.localized/NSVPX-ESX-10.5-55.8_nc.vmwarevm/NSVPX-ESX-10.5-55.8_nc.vmx
+
+...change...
+ethernet0.connectionType = "bridged"
+ethernet1.connectionType = "bridged"
+...to...
+ethernet0.connectionType = "custom"
+ethernet0.vnet = "vboxnet6"
+ethernet1.connectionType = "custom"
+ethernet1.vnet = "vboxnet6"
+...
+
+Remove Network interface
+```
+VBoxManage hostonlyif remove vboxnet6
+```
