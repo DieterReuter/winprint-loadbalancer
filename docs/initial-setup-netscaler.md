@@ -8,6 +8,8 @@ For the first time you install a new NetScaler appliance you have to configure a
 * login to the console (default credentials user=nsroot, password=nsroot)
 * setting the IP address, network mask
 * reboot the VM and you're done
+* install license file
+* reboot to activate license
 
 
 ## Configuring the NetScaler IP Address (NSIP)
@@ -107,5 +109,22 @@ Last login: Fri Jun 12 07:29:14 2015 from 10.100.30.5
  Done
 >
 ```
+
+
+### Installing NetScaler Licenses
+(see: http://support.citrix.com/proddocs/topic/netscaler-migration-10/ns-instpk-inst-ns-licns-tsk.html)
+
+Install the license file via `scp` from OSX
+```
+# scp ./FID__5ecff173_14dbb436215__4bcf.lic nsroot@10.100.30.200:/nsconfig/license/
+Password:
+FID__5ecff173_14dbb436215__4bcf.lic                                                                  100% 2201     2.2KB/s   00:00
+```
+
+Reboot the NetScaler to activate the license
+```
+ssh nsroot@10.100.30.200 reboot -w
+```
+
 
 Success, now you have set up the NetScaler appliance.

@@ -13,7 +13,7 @@ Let's check, is it's already enabled or not.
 ```
 > show ns feature | grep -i "Load Balancing"
  3)	Load Balancing                 LB                   ON
- 10)	Global Server Load Balancing   GSLB                 ON
+ 10)	Global Server Load Balancing   GSLB                 OFF
 ```
 
 
