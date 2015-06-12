@@ -1,6 +1,7 @@
 
 $VIP_NAME      = "vip-print"
-$VIP_IPADDRESS = "10.10.51.222"
+$VIP_IPADDRESS = "192.168.2.222"
+$VIP_IPADDRESS = "10.100.30.222"
 $VIP_NETMASK   = "255.255.255.0"
 $DEVCON_BINARY   = "C:\vagrant\wintools\devcon.exe"
 $NVSPBIND_BINARY = "C:\vagrant\wintools\nvspbind.exe"
