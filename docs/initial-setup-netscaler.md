@@ -68,6 +68,8 @@ Or just use the force mode without any further user interaction
 > reboot -f
 ```
 A reboot will take a minute or two, so just please be patient.
+
+From now on, we can leave the VMware console view and login to the NetScaler appliance via `ssh` from Linux or OSX or using `PuTTy` from Windows.
 ```
 # ping 10.100.30.200
 PING 10.100.30.200 (10.100.30.200): 56 data bytes
@@ -77,7 +79,6 @@ PING 10.100.30.200 (10.100.30.200): 56 data bytes
 64 bytes from 10.100.30.200: icmp_seq=3 ttl=64 time=1.003 ms
 ```
 
-From now on, we can leave the VMware console view and login to the NetScaler appliance via `ssh` from Linux or OSX or using `PuTTy` from Windows.
 ```
 # ssh-keygen -R 10.100.30.200
 # ssh nsroot@10.100.30.200
