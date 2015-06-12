@@ -19,7 +19,8 @@
 - https://social.technet.microsoft.com/Forums/de-DE/0cad1ba1-8c80-49fe-ad9f-2fff858ced03/setting-ip-addresses-with-win32networkadapterconfiguration?forum=winserverpowershell
 - https://4sysops.com/archives/disable-strict-name-checking-with-powershell/
 - http://www.tech-no.org/?p=1122
-
+- http://www.carlstalhood.com/netscaler-system-configuration/#vpxmac
+- http://support.citrix.com/proddocs/topic/netscaler/ns-gen-netscaler10-5-wrapper-con.html
 
 
 
