@@ -16,6 +16,7 @@ For the first time you install a new NetScaler appliance you have to configure a
 Let's assume, we'd like to have the following parameters
 * `NSIP=10.100.30.200`
 * `MSMASK=255.255.255.0`
+* `SNIP=10.100.30.220`
 
 
 To change the NetScaler IP address you have to login to the console. For a VMware VM that's available throught the VMware console view of the VM. When logged in, you have the NetScaler CLI which isn't the OS shell! If you like, you can also using the command `shell` to get to the OS shell prompt.
@@ -49,6 +50,21 @@ Warning: The configuration must be saved and the system rebooted for these setti
 	      Last Config Changed Time: Fri Jun 12 07:29:48 2015
 	        Last Config Saved Time: Fri Jun 12 07:16:11 2015
 WARNING: The configuration must be saved and the system rebooted for these settings to take effect
+ Done
+```
+
+For the communication with the backend servers, we have to define a Subnet IP Address (SNIP).
+```
+> add ns ip 10.100.30.220 255.255.255.0 -type SNIP
+ Done
+```
+```
+> show ns ip
+  	Ipaddress        Traffic Domain  Type             Mode     Arp      Icmp     Vserver  State
+  	---------        --------------  ----             ----     ---      ----     -------  ------
+1)	10.100.30.200    0               NetScaler IP     Active   Enabled  Enabled  NA       Enabled
+2)	10.100.30.222    0               VIP              Active   Enabled  Enabled  Enabled  Enabled
+3)	10.100.30.220    0               SNIP             Active   Enabled  Enabled  NA       Enabled
  Done
 ```
 
